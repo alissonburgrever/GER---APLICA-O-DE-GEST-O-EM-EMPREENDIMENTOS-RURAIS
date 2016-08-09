@@ -1,0 +1,187 @@
+#rolagem {
+	overflow: auto;
+	width: 275%;
+	background-color: #708090;
+
+}
+
+#rolagem1 {
+	overflow: auto;
+	width: 320%;
+	background-color: #708090;
+}
+
+#rolagem2 {
+  	overflow: auto;
+	width: 100%;
+	background-color: #fff;
+	height: 10px;
+}
+
+#rolagem3 {
+  	overflow: auto;
+	width: 100%;
+	background-color: #708090;
+}
+
+{
+    margin: 0;
+    padding: 0;
+}
+#papelparede{
+	width: 100%;
+	height: 100px;
+	background: url('../img/papel.png');
+}
+
+#fundo{
+
+}
+
+ion-content {
+	/*background: url("../img/logo1.png");*/
+	background-size: cover;
+	width: 500px;
+}
+
+#anos{
+	float: left;
+	border-radius: 5px;
+	border-color: #54FF9F;
+	height: 30px;
+	width: 40%;
+	padding-left: -1000%;
+	margin-left: 1.5%;
+}
+
+#investimentoLado{
+	margin-left: 1%;
+	width: 45%;
+	float: left;
+	margin-top: -4px;
+}
+
+#investimento {
+	border-radius: 5px;
+	border-color: #54FF9F;
+	height: 30px;
+}
+
+#calculadora {
+	position: fixed;
+	border-radius: 5px;
+	border-color: #54FF9F;
+	height: 30px;
+	width: 28%;
+}
+
+#ano {
+	border-radius: 5px;
+	border-color: #54FF9F;
+	height: 30px;
+	width: 78%;
+}
+
+#receita {
+	border-radius: 5px;
+	border-color: #00BFFF;
+	height: 30px;
+}
+
+.item-input input {
+	padding-right: 0px;
+}
+
+
+#custo {
+	border-radius: 5px;
+	border-color: #FF4040;
+	height: 30px;
+}
+
+#fluxoCaixa {
+	border-radius: 5px;
+	border-color: orange;
+	height: 30px;
+}
+
+#taxaDesconto2 {
+	border-radius: 5px;
+	border-color: orange;
+	width: 75px;
+	height: 30px;
+	margin-left: -3px;
+}
+
+#ano2 {
+	border-radius: 5px;
+	border-color: #54FF9F;
+	height: 30px;
+	width: 58px;
+	margin-left: -20%;
+	margin-top: 6px;
+}
+
+#campoResultPorcent2 {
+	border-radius: 5px;
+	border-color: orange;
+	width: 75px;
+	height: 30px;
+	margin-top: 15px;
+	padding-left: 15px;
+	border-width: 1px;
+	border-style: solid;
+	margin-left: -8px;
+}
+
+#espacoEntrePorcentagem {
+	margin-top: 12px;
+}
+
+#buttonCalc {
+	border-radius: 5px;
+	border: solid;
+	border-color: #9C9C9C;
+	margin-left: 0%;
+	width: 23.75%;
+	height: 31%;
+	font-size: 150%;
+	background-color: #fff;
+}
+
+#tabelaCalc {
+	border: solid;
+	border-color: #B5B5B5;
+	width: 65%;
+	height: 75%;
+	background: #FFF;
+	margin-top: -18%;
+	margin-left: 15%;
+}
+
+#resultCalc {
+	border-radius: 5px;
+	border: solid;
+	padding-left: 10px;
+	border-color: #9C9C9C;
+	width: 100%;
+}
+
+ #camposbaixo {
+  	border-radius: 5px;
+	border-color: orange;
+	width: 77px;
+	/*margin-right: 395px;*/
+	margin-right: 0px;
+	height: 30px;
+	margin-top: 15px;
+	padding-left: 15px;
+	border-width: 1px;
+	border-style: solid;
+	margin-left: 0px;
+
+}
+
+.ajusteSegundaTela {
+	width: 500px;
+}

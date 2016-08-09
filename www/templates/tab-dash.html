@@ -1,0 +1,392 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding" ng-controller="DashCtrl" id="fundo">
+    <!--<div class="md-toolbar-tools">-->
+        <div id="papelparede">
+          
+        </div>
+
+        <div>
+          <div style="width: 100%; margin-left: 1%; margin-top: 2%;">
+            <h4>Software de Gestão em Empreendimentos Rurais</h4>
+          </div>
+
+          <div id="anos" class="item item-input item-select">
+
+            <select ng-model="numeroDeAnos" ng-change="alterarNumeroDeAnos(numeroDeAnos)">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <div>
+            </select>
+          </div>
+
+          <div id="investimentoLado" class="col">
+            <label id="investimento" class="item item-input">
+              <input type="number" placeholder="Investimento" ng-model="dados[0].investimento">
+            </label>
+          </div>
+
+          <div>
+            <button onclick="javascript: calc();" style="border-radius: 60%; height: 35px; width: 35px; background-color: #fff" class="md-fab md-primary md-button md-ink-ripple">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      <div id="rolagem3">
+        <div class="row">
+          <div class="col">Ano</div>
+          <div class="col">Receita</div>
+          <div class="col">Custo</div>
+          <div class="col">Fluxo de caixa</div>
+        </div>
+        <div ng-repeat="linha in dados">
+          <div class="row">
+            <div class="col">
+              <label id="ano" class="item item-input">
+                <input readonly  type="number" ng-model="linha.ano">
+              </label>
+            </div>
+            <div class="col">
+              <label id="receita" class="item item-input">
+                <input type="number" placeholder="Receita" ng-model="linha.receita">
+              </label>
+            </div>
+            <div class="col">
+              <label id="custo" class="item item-input">
+                <input type="text" placeholder="Custo" name="input" ng-model="linha.custo">
+              </label>
+            </div>
+            <div class="col">
+              <label id="fluxoCaixa" class="item item-input">
+                <input readonly placeholder="Fluxo de Caixa" type="number" value="{{linha.receita - linha.custo}}">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <DIV id="popup" style="display: none;">
+        <p>
+          <center style="position: absolute;width: 100%;">
+            
+
+            <FORM name="Calc">
+              <TABLE id="tabelaCalc" BORDER=4 WIDTH="155" bgcolor="green">
+                <TR>
+                  <TD ALIGN="CENTER">
+                      <INPUT id="resultCalc" TYPE="text"  NAME="Input" SIZE="16">
+                  </TD>
+                </TR>
+                <TR>
+                  <TD ALIGN="CENTER">
+                      <INPUT id="buttonCalc" type="button" name="one"
+                             VALUE="  1  " onclick="Calc.Input.value += '1'">
+                      <INPUT id="buttonCalc" type="button" name="two"
+                             VALUE="  2  " onclick="Calc.Input.value += '2'">
+                      <INPUT id="buttonCalc" type="button" name="three"
+                             VALUE="  3  " onclick="Calc.Input.value += '3'">
+                      <INPUT id="buttonCalc" type="button" name="plus"
+                             VALUE="  +  " onclick="Calc.Input.value += ' + '">
+                      <BR>
+                      <INPUT id="buttonCalc" type="button" name="four"
+                             VALUE="  4  " onclick="Calc.Input.value += '4'">
+                      <INPUT id="buttonCalc" type="button" name="five"
+                             VALUE="  5  " onclick="Calc.Input.value += '5'">
+                      <INPUT id="buttonCalc" type="button" name="six"
+                             VALUE="  6  " onclick="Calc.Input.value += '6'">
+                      <INPUT id="buttonCalc" type="button" name="minus"
+                             VALUE="  -   " onclick="Calc.Input.value += ' - '">
+                      <BR>
+                      <INPUT id="buttonCalc" type="button" name="seven"
+                             VALUE="  7  " onclick="Calc.Input.value += '7'">
+                      <INPUT id="buttonCalc" type="button" name="eight"
+                             VALUE="  8  " onclick="Calc.Input.value += '8'">
+                      <INPUT id="buttonCalc" type="button" name="nine"
+                             VALUE="  9  " onclick="Calc.Input.value += '9'">
+                      <INPUT id="buttonCalc" type="button" name="times"
+                             VALUE="  x  " onclick="Calc.Input.value += ' * '">
+                      <BR>
+                      <INPUT id="buttonCalc" type="button" name="clear"
+                             VALUE="  c  " onclick="Calc.Input.value = ''">
+                      <INPUT id="buttonCalc" type="button" name="zero"
+                             VALUE="  0  " onclick="Calc.Input.value += '0'">
+                      <INPUT id="buttonCalc" type="button" name="DoIt"
+                             VALUE="  =  " onclick="Calc.Input.value = eval(Calc.Input.value)">
+                      <INPUT id="buttonCalc" type="button" name="div"
+                             VALUE="  /   " onclick="Calc.Input.value += ' / '">
+                  </TD>
+                </TR>
+              </TABLE>
+            </FORM>
+          </center>
+        </p>
+      </DIV>
+
+      <div style="height: 5px;"></div>
+
+      <div id="rolagem" style="width: 100%;">
+        <div class="row" id="rolagem">
+          <div class="col" id="espacoEntrePorcentagem">Ano
+            <div ng-repeat="linha in dados">
+              <div class="row">
+                <div class="col">
+                  <label id="ano2" class="item item-input" style="min-width: 25px">
+                    <input readonly  type="number" value="{{linha.ano}}">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[0]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 0) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[1]">
+            </label>
+            <div ng-repeat="linha in dados track by $index">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 1) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[2]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 2) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[3]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 3) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[4]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 4) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[5]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 5) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[6]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 6) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[7]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 7) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[8]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 8) | number : 2 }}"/></div>
+            </div>
+          </div>
+          <div class="col">
+            <label id="taxaDesconto2" class="item item-input">
+              <input type="number" ng-model="taxasDeDesconto[9]">
+            </label>
+            <div ng-repeat="linha in dados">
+                <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 9) | number : 2 }}"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 5px;"></div>
+      
+      <div id="rolagem" style="width: 100%;">
+        <div class="row" id="rolagem">
+
+          <!--<div class="col">Receita</div>
+          <div class="col">Custo</div>
+          <div class="col">Fluxo de Caixa</div>-->
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">Taxa <p>{{taxasDeDesconto[0]}}</p>%</div>
+
+        </div>
+
+        <div class="row" id="rolagem">
+          <!--<div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="number" value="{{calcularSomaDaReceita()}}">
+            </label>
+          </div>
+          <div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="number" value="{{calcularSomaDoCusto()}}">
+            </label>
+          </div>
+          <div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="number" value="{{calcularSomaDoFluxoDeCaixa()}}">
+            </label>
+          </div>-->
+          <div class="col" ng-repeat="taxa in taxasDeDesconto">
+            <label>
+              <input id="camposbaixo" readonly  type="text" value="{{calcularSomaDaPorcentagem(((+taxa) / 100) + 1) | number : 2 }}">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 5px;"></div>
+      
+      <div id="rolagem" style="width: 100%;">
+        <div class="row" id="rolagem">
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">VPL<p>{{taxasDeDesconto[0]}}</p>%</div>
+        </div>
+
+        <div class="row" id="rolagem">
+          <div class="col" ng-repeat="taxa in taxasDeDesconto">
+            <label>
+              <input id="camposbaixo" readonly  type="text" value="{{calcularVPL(((+taxa) / 100) + 1) | number : 2 }}">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 5px;"></div>
+      
+      <div id="rolagem" style="width: 100%;">
+        <div class="row" id="rolagem">
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">IL<p>{{taxasDeDesconto[0]}}</p>%</div>
+        </div>
+
+        <div class="row" id="rolagem">
+          <div class="col" ng-repeat="taxa in taxasDeDesconto">
+            <label>
+              <input id="camposbaixo" readonly  type="text" value="{{calcularIL(((+taxa) / 100) + 1) | number : 3 }}">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 5px;"></div>
+      
+      <div id="rolagem" style="width: 100%;">
+        <div class="row">
+          <div class="col">TIR</div>
+          <div class="col">R(a25%)</div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="text" ng-value="calcularTIR()">
+            </label>
+          </div>
+          <div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="number" value="{{calcularR25() | number : 3 }}">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!--<div style="height: 5px;"></div>
+      
+      <div id="rolagem">
+        <div class="row" id="rolagem">
+          <div class="col">R(a25%)</div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>
+              <input id="camposbaixo" readonly  type="number" value="{{calcularR25() | number : 3 }}">
+            </label>
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+      <!--<form id="calculos">
+        <div class="fundo cor_azul">
+            Montante em cada período:
+            <input id="mont" type="text" size="52" placeholder="ex: -30000.02, 10000.5, 5000, ..." value="-30000, 20000, 20000" />
+            <ul style="font-size: 11pt">
+                <li>Valores separados por vírgulas: <code>-3000,350.20, ...</code></li>
+                <li>não pode haver inversão de sinal após o primeiro valor</li>
+            </ul>
+        </div><br />
+        <div class="fundo  cor_azul">
+            Taxa de desconto: <input id="desc" type="text" size="12" placeholder="ex: 0.05 para 5%" value="0.05" /><br />
+        </div><br />
+        <input id="calc" type="button" name="name" value="Calcular" ng-click="calcula()"/>
+        <input id="reset" type="reset" name="name" value="Limpar"/>
+        <br /><br />
+        <div class="fundo cor_verde">
+            <table>
+                <tr>
+                  <td>VPL ($):</td><td><input id="result_vpl" type="text" class="alinhamento" size="8" align="right" readonly="true" /></td>
+                </tr><tr>
+                  <td>TIR (%):</td><td><input id="result_tir" type="text" class="alinhamento" size="8" form="calculos" readonly="true" /></td>
+            </tr>
+            </table>
+        </div>
+    </form>-->
+
+
+
+
+
+          <!-- target="_blank" -->
+      <div class="row" style="width: 100%; margin-top: 5px; padding: 0">
+        <a href="#/tab/chats"><input type="button" value="Proximo" style="border-top-left-radius: 40px 40px; border-bottom-left-radius: 40px 40px; height: 30px; width: 230%; border-color: #CFCFCF; background-color: #E8E8E8; margin-left: 265%;"/></a>
+      </div>
+  </ion-content>
+</ion-view>

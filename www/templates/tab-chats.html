@@ -1,0 +1,111 @@
+<ion-view view-title="Chats">
+  <!--<ion-content class="padding">-->
+  <!-- NÃO ESQUECER QUE MUDEI AQUI NO HEIGHT PARA MUDAR O TAMANHO DA PÁGINA NA SEGUNDA TELA -->
+  <ion-content class="padding" ng-controller="DashCtrl" style="
+  height: 550px;">
+    <!--<div class="md-toolbar-tools">-->
+    <div id="papelparede"></div>
+
+    <div id="rolagem">
+      <div class="row">
+        <div class="col" id="espacoEntrePorcentagem">Ano
+          <div ng-repeat="linha in dados">
+            <div class="row">
+              <div class="col">
+                <label id="ano2" class="item item-input" style="min-width: 25px">
+                  <input readonly  type="number" value="{{linha.ano}}">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[0]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 0) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[1]">
+          </label>
+          <div ng-repeat="linha in dados track by $index">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 1) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[2]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 2) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[3]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 3) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[4]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 4) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[5]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 5) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[6]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 6) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[7]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 7) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[8]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 8) | number : 2 }}"/></div>
+          </div>
+        </div>
+        <div class="col">
+          <label id="taxaDesconto2" class="item item-input">
+            <input type="number" ng-model="taxasDeDesconto[9]">
+          </label>
+          <div ng-repeat="linha in dados">
+              <div class="col"><input readonly id="campoResultPorcent2" value="{{calcularTaxaDeDesconto(linha, 9) | number : 2 }}"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- target="_blank" -->
+    <div class="row" style="width: 100%; margin-top: 5px; padding: 0">
+      <a href="#/tab/dash"><input type="button" value="Anterior" style="border-top-right-radius: 40px 40px; border-bottom-right-radius: 40px 40px; height: 30px; width: 230%; border-color: #CFCFCF; background-color: #E8E8E8; margin-left: 0%;" /></a>
+      <a href="#/tab/account"><input type="button" value="Proximo" style="border-top-left-radius: 40px 40px; border-bottom-left-radius: 40px 40px; height: 30px; width: 230%; border-color: #CFCFCF; background-color: #E8E8E8; margin-left: 170%;"/></a>
+    </div>
+  </ion-content>
+</ion-view>

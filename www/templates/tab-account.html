@@ -1,0 +1,93 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-content class="padding" ng-controller="DashCtrl" style="
+    height: 550px;">
+    <!--<div class="md-toolbar-tools">-->
+    <div id="papelparede"></div>
+      
+    <div id="rolagem">
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">Taxa %</div>
+      </div>
+
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto">
+          <label>
+            <input id="camposbaixo" readonly  type="text" value="{{calcularSomaDaPorcentagem(((+taxa) / 100) + 1) | number : 2 }}">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 5px;"></div>
+      
+    <div id="rolagem">
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">VPL</div>
+      </div>
+
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto">
+          <label>
+            <input id="camposbaixo" readonly  type="text" value="{{calcularVPL(((+taxa) / 100) + 1) | number : 2 }}">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 5px;"></div>
+    
+    <div id="rolagem">
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">IL</div>
+      </div>
+
+      <div class="row">
+        <div class="col" ng-repeat="taxa in taxasDeDesconto">
+          <label>
+            <input id="camposbaixo" readonly  type="text" value="{{calcularIL(((+taxa) / 100) + 1) | number : 3 }}">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 5px;"></div>
+    
+    <div id="rolagem">
+      <div class="row">
+        <div class="col">TIR</div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>
+            <input id="camposbaixo" readonly  type="text" ng-value="calcularTIR()">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 5px;"></div>
+    
+    <div id="rolagem">
+      <div class="row">
+        <div class="col">R(a25%)</div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>
+            <input id="camposbaixo" readonly  type="number" value="{{calcularR25() | number : 3 }}">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- target="_blank" -->
+    <div class="row" style="width: 100%; margin-top: 5px; padding: 0">
+      <a href="#/tab/chats"><input type="button" value="Anterior" style="border-top-right-radius: 40px 40px; border-bottom-right-radius: 40px 40px; height: 30px; width: 230%; border-color: #CFCFCF; background-color: #E8E8E8; margin-left: 0%;" /></a>
+    </div>
+
+    </ion-content>  
+  </ion-content>
+</ion-view>
