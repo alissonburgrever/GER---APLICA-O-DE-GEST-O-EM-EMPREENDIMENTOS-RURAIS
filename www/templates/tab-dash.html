@@ -253,7 +253,7 @@
           <!--<div class="col">Receita</div>
           <div class="col">Custo</div>
           <div class="col">Fluxo de Caixa</div>-->
-          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">Taxa <p>{{taxasDeDesconto[0]}}</p>%</div>
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index"><p>Taxa {{taxasDeDesconto[$index]}}%</p></div>
 
         </div>
 
@@ -285,7 +285,7 @@
       
       <div id="rolagem" style="width: 100%;">
         <div class="row" id="rolagem">
-          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">VPL<p>{{taxasDeDesconto[0]}}</p>%</div>
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index"><p>VPL {{taxasDeDesconto[$index]}}%</p></div>
         </div>
 
         <div class="row" id="rolagem">
@@ -301,7 +301,7 @@
       
       <div id="rolagem" style="width: 100%;">
         <div class="row" id="rolagem">
-          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index">IL<p>{{taxasDeDesconto[0]}}</p>%</div>
+          <div class="col" ng-repeat="taxa in taxasDeDesconto track by $index"><p>IL {{taxasDeDesconto[$index]}}%</p></div>
         </div>
 
         <div class="row" id="rolagem">
@@ -326,7 +326,7 @@
             <label>
               <input id="camposbaixo" readonly  type="text" ng-value="calcularTIR()">
             </label>
-          </div>
+          </div>                                                                                                                                                                                                                                                                                                                  
           <div class="col">
             <label>
               <input id="camposbaixo" readonly  type="number" value="{{calcularR25() | number : 3 }}">
